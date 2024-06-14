@@ -1,0 +1,30 @@
+.club__menu {
+  position: fixed;
+  top: 5;
+  z-index: 1030;
+  ul {
+    margin-left: 1rem;
+    padding-left: 0;
+  }
+  li {
+    list-style: none;
+    font-size: 3rem;
+    padding-left: 0;
+  }
+  a {
+    color: #53f379;
+  }
+  a:hover {
+    color: #f36d53;
+    cursor: pointer;
+  }
+}
+@media (max-width: 801px) {
+  .club__menu {
+    margin-top: 10em;
+    position: fixed;
+    li {
+      font-size: 4rem;
+    }
+  }
+}

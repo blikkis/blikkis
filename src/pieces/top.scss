@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&family=VT323&display=swap");
+
+.club {
+  &__top {
+    flex-direction: column;
+    width: 100%;
+    &__headline {
+      display: flex;
+      flex-direction: row;
+      h1 {
+        font-size: 8em;
+        margin: 0;
+      }
+      &--blinker {
+        font-size: 2.2rem;
+        margin-top: 13rem;
+        position: absolute;
+        margin-left: 5rem;
+        width: 100%;
+        color: yellow;
+        font-family: "Edu TAS Beginner", cursive;
+        -webkit-animation-name: blink;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-duration: 2s;
+      }
+      @-webkit-keyframes blink {
+        0% {
+          color: yellow;
+        }
+        50% {
+          color: yellow;
+        }
+        51% {
+          color: red;
+        }
+        100% {
+          color: red;
+        }
+      }
+    }
+    &__image {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      img {
+        width: 20em;
+      }
+    }
+  }
+}
+@media (min-width: 801px) {
+  .club {
+    &__top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      &__headline {
+        display: flex;
+        flex-direction: row;
+
+        h1 {
+          font-size: 10em;
+          margin: 0;
+          margin-left: 1rem;
+        }
+        &--blinker {
+          margin-top: 17rem;
+          margin-left: 13rem;
+        }
+      }
+      &__image {
+        img {
+          width: 45em;
+        }
+      }
+    }
+  }
+}
