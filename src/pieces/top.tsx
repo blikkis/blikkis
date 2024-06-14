@@ -2,7 +2,7 @@ import "./top.scss";
 import croc from "../assets/croc.png";
 const Top = () => {
   return (
-    <div className="club__top">
+    <div className="club__top" id="top">
       <div className="club__top__headline">
         <h1>
           BLIKKIS <br /> CLUB

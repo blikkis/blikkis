@@ -5,6 +5,9 @@ const Menu = () => {
     <div className="club__menu">
       <ul>
         <li>
+          <a href="#top">HOME</a>
+        </li>
+        <li>
           <a href="#about">ABOUT</a>
         </li>
         <li>
