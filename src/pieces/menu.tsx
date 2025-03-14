@@ -14,7 +14,7 @@ const Menu = () => {
           <a href="#vision">VISION</a>
         </li>
         <li>
-          <a href="#croc">CROC</a>
+          <a href="#croc">MAROCROC</a>
         </li>
       </ul>
     </div>
