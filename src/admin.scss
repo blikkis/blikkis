@@ -1,0 +1,226 @@
+$black: #080808;
+$surface: #0f0f0f;
+$surface-raised: #161616;
+$blood: #7a0000;
+$blood-bright: #cc1111;
+$text: #e2d8cc;
+$text-dim: #8a7f75;
+$green: #3a9e5f;
+$border: rgba(160, 0, 0, 0.25);
+
+.admin-lock {
+  min-height: 100vh;
+  background: $black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 2rem;
+
+  &__title {
+    font-family: "Cinzel", serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: $text-dim;
+  }
+
+  &__dots {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid $text-dim;
+    transition: background 0.12s, border-color 0.12s;
+
+    &--filled {
+      background: $text;
+      border-color: $text;
+    }
+  }
+
+  &__dots--error &__dot {
+    background: $blood-bright;
+    border-color: $blood-bright;
+  }
+
+  &__pad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  &__key {
+    aspect-ratio: 1;
+    background: $surface-raised;
+    border: 1px solid $border;
+    color: $text;
+    font-family: "Cinzel", serif;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:active { background: $blood; }
+
+    &--empty {
+      background: transparent;
+      border-color: transparent;
+      pointer-events: none;
+    }
+
+    &--back {
+      font-size: 1.1rem;
+      background: $surface;
+    }
+  }
+}
+
+.admin {
+  min-height: 100vh;
+  background: $black;
+
+  &__tabs {
+    display: flex;
+    border-bottom: 1px solid $border;
+    background: $surface;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  &__tab {
+    flex: 1;
+    padding: 1rem 0;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: $text-dim;
+    font-family: "Cinzel", serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+
+    &--active {
+      color: $blood-bright;
+      border-bottom-color: $blood-bright;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem;
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: $surface-raised;
+    border: 1px solid $border;
+    border-left: 3px solid $green;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    text-align: left;
+
+    &:active { opacity: 0.6; }
+    &--dead { border-left-color: $blood-bright; }
+    &--morder { border-left-color: $blood-bright; }
+    &--info { cursor: default; &:active { opacity: 1; } }
+  }
+
+  &__row-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__name {
+    font-family: "Cinzel", serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $text;
+
+    .admin__row--dead & { color: $text-dim; }
+  }
+
+  &__status {
+    font-family: "Cinzel", serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $green;
+
+    .admin__row--dead & { color: $blood-bright; }
+    &--morder { color: $blood-bright; }
+  }
+
+  &__pin {
+    font-family: "Cinzel", serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: $text;
+    background: $surface;
+    padding: 0.2em 0.5em;
+    border: 1px solid $border;
+  }
+
+  &__toggle {
+    background: $surface;
+    border: 1px solid $border;
+    color: $text-dim;
+    font-size: 0.9rem;
+    padding: 0.3em 0.5em;
+    cursor: pointer;
+
+    &:active { background: $blood; color: $text; }
+  }
+
+  &__roller {
+    padding-top: 0.75rem;
+  }
+
+  &__error {
+    font-family: "Cinzel", serif;
+    font-size: 0.75rem;
+    color: $blood-bright;
+    padding: 0 1.25rem 0.5rem;
+    word-break: break-word;
+  }
+
+  &__generate {
+    display: block;
+    width: calc(100% - 2.5rem);
+    margin: 0 1.25rem 1rem;
+    padding: 1rem;
+    background: $blood;
+    border: 1px solid $blood-bright;
+    color: $text;
+    font-family: "Cinzel", serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s;
+
+    &:hover { background: $blood-bright; }
+    &:disabled { opacity: 0.5; cursor: default; }
+  }
+}

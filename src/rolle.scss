@@ -1,0 +1,190 @@
+$black: #080808;
+$surface: #0f0f0f;
+$surface-raised: #161616;
+$blood: #7a0000;
+$blood-bright: #cc1111;
+$text: #e2d8cc;
+$text-dim: #8a7f75;
+$green: #3a9e5f;
+$border: rgba(160, 0, 0, 0.25);
+
+@keyframes reveal {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+// --- PIN pad ---
+
+.rolle-lock {
+  min-height: 100vh;
+  background: $black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+
+  &__title {
+    font-family: "Creepster", cursive;
+    font-size: 2.5rem;
+    color: $blood-bright;
+    text-shadow: 0 0 20px rgba($blood, 0.7);
+    letter-spacing: 0.05em;
+  }
+
+  &__sub {
+    font-family: "Cinzel", serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $text-dim;
+    text-align: center;
+  }
+
+  &__dots {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.1s;
+  }
+
+  &__dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid $text-dim;
+    transition: background 0.12s, border-color 0.12s;
+
+    &--filled {
+      background: $text;
+      border-color: $text;
+    }
+  }
+
+  &__dots--error &__dot {
+    background: $blood-bright;
+    border-color: $blood-bright;
+  }
+
+  &__dots--loading &__dot--filled {
+    background: $text-dim;
+    border-color: $text-dim;
+  }
+
+  &__pad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  &__key {
+    aspect-ratio: 1;
+    background: $surface-raised;
+    border: 1px solid $border;
+    color: $text;
+    font-family: "Cinzel", serif;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:active { background: $blood; }
+
+    &--empty {
+      background: transparent;
+      border-color: transparent;
+      pointer-events: none;
+    }
+
+    &--back {
+      font-size: 1.1rem;
+      background: $surface;
+    }
+  }
+}
+
+// --- Role reveal ---
+
+.rolle-reveal {
+  min-height: 100vh;
+  background: $black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  animation: reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &--morder {
+    background: radial-gradient(ellipse at center, rgba($blood, 0.3) 0%, $black 65%);
+  }
+
+  &--uskyldig {
+    background: radial-gradient(ellipse at center, rgba(30, 60, 40, 0.4) 0%, $black 65%);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    max-width: 340px;
+  }
+
+  &__greeting {
+    font-family: "Cinzel", serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: $text-dim;
+  }
+
+  &__label {
+    font-family: "Crimson Text", serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: $text-dim;
+  }
+
+  &__role {
+    font-family: "Creepster", cursive;
+    font-size: clamp(3.5rem, 20vw, 6rem);
+    line-height: 1;
+    letter-spacing: 0.05em;
+
+    .rolle-reveal--morder & {
+      color: $blood-bright;
+      text-shadow:
+        0 0 20px rgba($blood, 1),
+        0 0 50px rgba($blood, 0.5),
+        3px 3px 0 #000;
+    }
+
+    .rolle-reveal--uskyldig & {
+      color: #7ecfa0;
+      text-shadow:
+        0 0 20px rgba(60, 160, 80, 0.6),
+        2px 2px 0 #000;
+    }
+  }
+
+  &__divider {
+    width: 50px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.3;
+  }
+
+  &__desc {
+    font-family: "Crimson Text", serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-style: italic;
+    color: $text-dim;
+  }
+}
