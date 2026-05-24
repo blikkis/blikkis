@@ -48,7 +48,7 @@ const Mysteriet = () => {
         <p className="mysteriet__eyebrow">En kveld du aldri vil glemme</p>
         <h1 className="mysteriet__title">Mysteriet<br />på Sicilia</h1>
         <div className="mysteriet__divider" />
-        <p className="mysteriet__tagline">[Undertittel / dato / sted kommer her]</p>
+        <p className="mysteriet__tagline">Sicilia, 28.05.2027</p>
       </header>
 
       <nav className="mysteriet__tabs">
@@ -75,7 +75,7 @@ const Mysteriet = () => {
 
           <section className="mysteriet__section">
             <h2>Slik spiller du</h2>
-            <p>To personer vil snart få beskjed om at de er morderne. Resten vil være de uskyldige på reisen. Hva er det morderne gjør? Først og fremst må de skaffe seg et våpen, og ha en måte å tydelig bruke det våpenet. Eksempler kan være at de har en vannpistol og sier "pang pang" eller at de har en tryllestav og sier "Avada kadavra" og "du er død". Dette kan kun skje når morderen er helt alene med en av de uskyldige reisende - for om det er et vitne til drapet, så kan de sladre. Simen var det uheldige første offeret, og har gjenoppstått som gjenferd og game master. Det er denne personen et vitne kan sladre til, som vil føre til at Simen tar sin hevn på morderen, og morderen selv dør. Alt må selvfølgelig skje i person. Morderne må si i person til Simen at de dør. Hvem som helst har lov til å kalle inn til et EMERGENCY MEETING hvor man kan stemme ut noen. Dette kan dog bare skje to ganger i løpet av turen, og alle levende får en stemme hver.</p>
+            <p>To personer vil snart få beskjed om at de er morderne. Resten vil være de uskyldige på reisen. Hva er det morderne gjør? Først og fremst må de skaffe seg et våpen, og ha en måte å tydelig bruke det våpenet. Eksempler kan være at de har en vannpistol og sier "pang pang" eller at de har en tryllestav og sier "Avada kadavra" og "du er død". Dette kan kun skje når morderen er helt alene med en av de uskyldige reisende - for om det er et vitne til drapet, så kan de sladre. Simen var det uheldige første offeret, og har gjenoppstått som gjenferd og game master. Det er denne personen et vitne kan sladre til, som vil føre til at Simen tar sin hevn på morderen, og morderen selv dør. Alt må selvfølgelig skje i person. Morderne må fortelle Simen når de har drept noen. De kan riske å gjøre dette på slack (da er det en sjanse for at noen ser på mobilen til Simen akkurat da), så helst gjør det i hemmelighet i person. SPILLET STARTER TORSDAG MORGEN KLOKKEN 0800. DERE KAN SJEKKE ROLLER FØR DET</p>
           </section>
 
           <a href="/rolle" className="mysteriet__rolle-link">

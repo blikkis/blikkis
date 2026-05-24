@@ -8,6 +8,10 @@ $text-dim: #8a7f75;
 $green: #3a9e5f;
 $border: rgba(160, 0, 0, 0.25);
 
+body {
+  background-color: $black;
+}
+
 .admin-lock {
   min-height: 100vh;
   background: $black;
